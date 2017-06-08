@@ -13,11 +13,14 @@ struct node {
 };
 
 struct node * createNode(int data);
-void stackPush(struct node * stack, int data);
+struct node * stackPush(struct node * stack, int data);
 struct node * stackPop(struct node * stack);
 
 int stackTop(struct node * stack);
 int stackSize(struct node * stack);
 int is_empty(struct node * stack);
+
+void free_stack(struct node * stack);
+void free_stackR(struct node * stack);
 
 #endif

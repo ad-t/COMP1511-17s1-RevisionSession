@@ -7,19 +7,26 @@
 #define TRUE 1
 #define FALSE 0
 
+
 struct node {
     int data;
     struct node * next;
 };
 
-struct node * createNode(int data);
-struct node * enqueue(struct node * queue, int data);
-int dequeue(struct node * queue);
-int queue_is_empty(struct node * queue);
-int queue_front(struct node * queue);
-int queue_size(struct node * queue);
+struct q_rep {
+    struct node * head;
+    struct node * tail;
+    int size;
+};
 
-void queue_free(struct node * queue);
-void queue_rfree(struct node * queue);
+struct node * createNode(int data);
+struct node * enqueue(struct q_rep * queue, int data);
+int dequeue(struct q_rep * queue);
+int queue_is_empty(struct q_rep * queue);
+int queue_front(struct q_rep * queue);
+int queue_size(struct q_rep * queue);
+
+void queue_free(struct q_rep * queue);
+void queue_rfree(struct q_rep * queue);
 
 #endif
