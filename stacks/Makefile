@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-Wall -Werror
-BIN=test_stack
+CFLAGS=-Wall -Werror -g
+BIN=build
 
 build: stack.o test_stack.o
 	$(CC) $(CFLAGS) stack.o test_stack.o -o $(BIN)

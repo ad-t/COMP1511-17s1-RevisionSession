@@ -1,3 +1,9 @@
-!*.c
-!*.h
-!Makefile
+!/**/*.c
+!/**/*.h
+!/**/Makefile
+
+/**/*.o
+
+/**/build
+
+/**/*.swp

@@ -22,10 +22,12 @@ struct node * stackPush(struct s_rep * stack, int data);
 struct node * stackPop(struct s_rep * stack);
 
 int stackTop(struct s_rep * stack);
-int stackSize(struct s_rep * stack);
+unsigned int stackSize(struct s_rep * stack);
 int is_empty(struct s_rep * stack);
 
 void free_stack(struct s_rep * stack);
 void free_stackR(struct s_rep * stack);
+
+void printStack(struct s_rep * stack);
 
 #endif
