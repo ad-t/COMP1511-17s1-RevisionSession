@@ -18,6 +18,14 @@ int main (int argc, char * argv[]) {
     assert(listRemove(list, 24));
     assert(listSize(list) == 30);
     assert(listMember(list, 21));
+    assert(listSize(NULL) == 0);
+    assert(!listMember(NULL, 0));
+
+    struct node * second = createNode(5);
+    assert(listSize(second) == 1);
+    assert(!listMember(second, 6));
+
+    printList(list);
 
     // let's add more tests!
 

@@ -15,7 +15,7 @@ struct node {
 struct node * createNode(int data);
 void append(struct node * list, int data);
 int listSize(struct node * list);
-int listRemove(struct node * list, int data);
+struct node * listRemove(struct node * list, int data);
 int listMember(struct node * list, int data);
 void printList(struct node * list);
 
