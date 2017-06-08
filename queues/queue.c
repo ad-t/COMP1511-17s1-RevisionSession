@@ -82,23 +82,18 @@ int queue_size(struct q_rep * queue) {
 }
 
 void queue_free(struct q_rep * queue) {
-    if (queue == NULL) {
+    if (queue == NULL || queue_is_empty(queue)) {
         return;
     } else {
-        if (queue_is_empty(queue)) {
-            return;
-        } else {
-            struct node * curr = queue->head;
-            struct node * following = NULL;
-            while (curr != NULL) {
-                if (following == NULL) {
-                    following = curr->next;
-                }
-                free(curr);
-                curr = following;
-                following = following->next;
-            }
+        struct node * curr = queue->head;
+        struct node * prev = NULL;
+        while (curr != NULL) {
+            prev = curr;
+            curr = curr->next;
+            free(prev);
         }
+        queue->head = NULL;
+        queue->tail = NULL;
     }
     return;
 }
@@ -121,4 +116,21 @@ void queue_rfree(struct q_rep * queue) {
         queue->tail = NULL;
     }
     return;
+}
+
+void printQueue(struct q_rep * queue) {
+    if (queue == NULL || queue_is_empty(queue)) {
+        printf("(empty)\n");
+    } else {
+        printf("[");
+        struct node * curr = queue->head;
+        while (curr != NULL) {
+            printf("%d", curr->data);
+            if (curr->next != NULL) {
+                printf(", ");
+            }
+            curr = curr->next;
+        }
+        printf("]\n");
+    }
 }

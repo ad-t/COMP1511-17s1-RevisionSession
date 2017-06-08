@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-Wall -Werror
-BIN=test_queue
+CFLAGS=-Wall -Werror -g
+BIN=build
 
 build: queue.o test_queue.o
 	$(CC) $(CFLAGS) queue.o test_queue.o -o $(BIN)

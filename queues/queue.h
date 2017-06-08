@@ -16,7 +16,6 @@ struct node {
 struct q_rep {
     struct node * head;
     struct node * tail;
-    int size;
 };
 
 struct node * createNode(int data);
@@ -28,5 +27,7 @@ int queue_size(struct q_rep * queue);
 
 void queue_free(struct q_rep * queue);
 void queue_rfree(struct q_rep * queue);
+
+void printQueue(struct q_rep * queue);
 
 #endif
