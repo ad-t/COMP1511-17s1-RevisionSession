@@ -12,15 +12,20 @@ struct node {
     struct node * next;
 };
 
+struct s_rep {
+    struct node * head;
+    struct node * tail;
+};
+
 struct node * createNode(int data);
-struct node * stackPush(struct node * stack, int data);
-struct node * stackPop(struct node * stack);
+struct node * stackPush(struct s_rep * stack, int data);
+struct node * stackPop(struct s_rep * stack);
 
-int stackTop(struct node * stack);
-int stackSize(struct node * stack);
-int is_empty(struct node * stack);
+int stackTop(struct s_rep * stack);
+int stackSize(struct s_rep * stack);
+int is_empty(struct s_rep * stack);
 
-void free_stack(struct node * stack);
-void free_stackR(struct node * stack);
+void free_stack(struct s_rep * stack);
+void free_stackR(struct s_rep * stack);
 
 #endif
